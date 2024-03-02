@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - Aula 07</title>
+</head>
+<body>
+    <label for="">Digite o primeiro número:</label>
+    <br>
+    <input type="text" id="num1">
+    <br><br>
+    <label for="">Digite o segundo número: </label>
+    <br>
+    <input type="text" id="num2">
+    <br><br>
+    <button type="button" id="btn">Enviar</button>
+    <br><br>
+    Resultado: <input type="text" id="resultado">
+
+    <script>
+        btn.addEventListener("click",
+            function(){
+                let num1, num2, res;
+                num1 = Number(document.getElementById("num1").value);
+                num2 = Number(document.getElementById("num2").value);
+                if(num1 == num2){
+                    document.getElementById("resultado").value = "Os números são iguais!";
+                }else{
+                    if(num1 > num2){
+                        document.getElementById("resultado").value = num1 + " é maior que " + num2;
+                    }else{
+                        document.getElementById("resultado").value = num2 + " é maior que " + num1;
+                    }
+                }
+            }
+        );
+    </script>
+</body>
+</html>

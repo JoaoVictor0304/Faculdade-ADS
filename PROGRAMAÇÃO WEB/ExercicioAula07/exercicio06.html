@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06 - Aula 07</title>
+</head>
+<body>
+    <label for="">Qual é o preço do produto:</label>
+    <br>
+    <input type="text" name="" id="preco">
+    <br><br>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>condições de pagamento</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td>À vista 10% de desconto</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>Cartão 5% de desconto</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>Parcelado 10% de aumento</td>
+        </tr>
+    </table>
+    <br>
+    <label for="">Qual é a forma de pagamento:</label>
+    <br>
+    <input type="text" name="" id="pgto">
+    <br><br>
+    <button type="button" id="btn">Enviar</button>
+    <br><br>
+    Valor a ser pago: <input type="text" name="" id="res">
+
+    <script>
+        btn.addEventListener("click", 
+            function(){
+                let preco, pgto, res;
+                preco = Number(document.getElementById("preco").value);
+                pgto = Number(document.getElementById("pgto").value);
+                
+                switch(pgto){
+                    case 1:
+                        res = preco - preco*0.1
+                        document.getElementById("res").value = res;
+                        break;
+                    case 2:
+                        res = preco - preco*0.05
+                        document.getElementById("res").value = res;
+                        break;
+                    case 3:
+                        res = preco + preco*0.1
+                        document.getElementById("res").value = res;
+                        break;
+                    default:
+                        document.getElementById("res").value = "Escreva uma opção válida!";
+                }
+            }
+        );
+    </script>
+</body>
+</html>

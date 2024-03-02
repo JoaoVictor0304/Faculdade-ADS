@@ -1,0 +1,39 @@
+#cabecalho{
+    width: 100%;
+    height: 200px;
+    background-color: #68256f;
+}
+
+#navegacao{
+    width: 100%;
+    height: 100px;
+    background-color: #35122e;
+}
+
+#area{
+    width: 70%;
+    height: 400px;
+    background-color: #93b4db;
+    float: left;
+}
+
+#importante{
+    width: 70%;
+    height: 400px;
+    background-color: #d0e4ae;
+    float: left;
+}
+
+#barra_lateral{
+    width: 30%;
+    height: 800px;
+    float: right;
+    background-color: #194b32;
+}
+
+#rodape{
+    width: 100%;
+    height: 200px;
+    background-color: aqua;
+    float: left;
+}

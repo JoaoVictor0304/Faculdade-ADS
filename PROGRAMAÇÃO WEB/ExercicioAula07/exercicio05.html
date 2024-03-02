@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05 - Aula 07</title>
+</head>
+<body>
+    <label for="">Digite a primeira nota:</label>
+    <br>
+    <input type="text" name="" id="n1">
+    <br><br>
+    <label for="">Digite a segunda nota:</label>
+    <br>
+    <input type="text" name="" id="n2">
+    <br><br>
+    <label for="">Digite a terceira nota:</label>
+    <br>
+    <input type="text" name="" id="n3">
+    <br><br>
+    <button type="button" id="btn">Enviar</button>
+    <br><br>
+    O aluno está: <input type="text" name="" id="res">
+
+    <script>
+        btn.addEventListener("click", 
+            function(){
+                let n1, n2, n3, res;
+                n1 = Number(document.getElementById("n1").value);
+                n2 = Number(document.getElementById("n2").value);
+                n3 = Number(document.getElementById("n3").value);
+                
+                res = (n1 + n2 + n3)/3;
+
+                if(res >= 6){
+                    document.getElementById("res").value = "APROVADO";
+                }else if(res >= 3 && res < 6){
+                    document.getElementById("res").value = "EXAME";
+                }else{
+                    document.getElementById("res").value = "REPROVADO";
+                }
+
+            }
+        );
+    </script>
+</body>
+</html>

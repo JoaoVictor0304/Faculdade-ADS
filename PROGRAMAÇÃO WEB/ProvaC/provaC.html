@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova C - Exercício 01</title>
+</head>
+<body>
+    
+    <script>
+        "use strict";
+
+        let idade, expe, funcionarios = 0;
+
+        do{
+            idade = parseInt(prompt("Digite sua idade:"));
+            expe = prompt("Digite o tempo de experiência no serviço: (S/N)");
+
+            if(idade > 21){
+                if(expe == "s"){
+                    funcionarios ++;
+                }
+            }
+
+        }while(idade != 0)
+        
+        alert("Número de funcionários com experiência acima de 21 anos: " + funcionarios);
+        
+    </script>
+</body>
+</html>

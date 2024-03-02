@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12 - Aula 07</title>
+</head>
+<body>
+    <form action="">
+        <h1>Jogo de adivinhar</h1>
+        <button type="button" onclick="novoJogo()">Iniciar jogo</button>
+        <br><br>
+        <label for="">Chute um valor entre 0 e 100:</label>
+        <input type="number" name="" id="n1">
+        <br><br>
+        <button type="button" onclick="verificarChute()">Enviar</button>
+        <br><br>
+        <div id="res"></div>
+        <br>
+        <div id="tentativas"></div>
+        <br>
+        <div id="iniciar"></div>
+    </form>
+        <script>
+
+            let num, tentativas = 0;
+
+            function novoJogo(){
+                num = Math.round(Math.random()*100);
+                tentativas = 0;
+                document.getElementById("res").innerHTML = "";
+                document.getElementById("tentativas").innerHTML = "";
+                document.getElementById("iniciar").innerHTML = "";
+            }
+
+            function verificarChute(){
+                const chute = parseInt(document.getElementById("n1").value);
+                    
+                    tentativas++;
+                    console.log(tentativas);
+
+                    if(chute == num){
+                        document.getElementById("res").innerHTML = "Parabéns você acertou!"
+                        document.getElementById("tentativas").innerHTML = "Tentativas: " + tentativas;
+                        document.getElementById("iniciar").innerHTML = "Se desejar inicar o jogo novamente, click no botão Iniciar jogo";
+
+                    }else if(chute < num){
+                        document.getElementById("res").innerHTML = "Tente um número maior";
+                    }else{
+                        document.getElementById("res").innerHTML = "Tente um número menor";
+                    }
+            }
+        </script>
+</body>
+</html>

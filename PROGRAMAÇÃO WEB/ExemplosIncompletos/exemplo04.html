@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 04 - for..of</title>
+    <meta charset="UTF-8">
+    <script>
+        "use strict";
+        window.addEventListener("load", function(){
+            let meses = ["JAN", "FEV", "MAR", "ABRIL", "MAIO", "JUN"];
+            let nro = [3, 5, 8, 1, 0];
+            let campo = document.querySelector("#res");
+            let mes;
+            for (mes of meses){
+                campo.innerHTML += mes + "<br>";
+            }
+            // funções de vetor
+            // ordena os valores
+            let ordem = nro.sort();
+            campo.innerHTML += "Vetor ordenado: <br>";
+            for (let v of ordem){
+                campo.innerHTML += v + "<br>";
+            }
+            // reverte os valores do vetor
+            let r = meses.reverse();
+            campo.innerHTML += "Vetor invertido: <br>";
+            for (mes of r){
+                campo.innerHTML += mes + "<br>";
+            }
+            // junta vetores
+            let c = meses.concat(nro);
+            campo.innerHTML += "Vetores juntos: <br>";
+            for (let v of c){
+                campo.innerHTML += v + "<br>";
+            }
+
+        });
+
+    </script>
+</head>
+<body>
+    <article id="res"></article>
+</body>
+</html>

@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+#container{
+    margin-top: 5%;
+    border-radius: 100px;
+    width: 500px;
+    padding: 50px;
+    border: solid 5px red;
+    box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.2) ;
+    background: linear-gradient(to bottom, #ffffff, #cccccc);
+    text-align: justify;
+}
+
+.classe1{
+    background-color: red;
+    color: white;
+}
+
+.classe2{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.classe3{
+    color: green;
+    font-weight: bold;
+    background-color: black;
+    text-decoration: line-through;
+}
+
+.classe4{
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+}

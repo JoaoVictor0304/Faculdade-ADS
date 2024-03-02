@@ -1,0 +1,93 @@
+body{
+    background-color: #AFEEEE;
+    margin: 0px;
+}
+
+header{
+    height: 200px;
+    width: 100%;
+    background-color: #66CDAA;
+    margin-bottom: 20px;
+}
+
+#logo {
+    height: 150px;
+    width: 300px;
+    background-color: #00008B;
+    margin: 20px 0px 0px 50px;
+    float: left;
+}                
+
+nav{
+    width: 300px;
+    height: 50px;
+    background-color: #00008B;
+    margin: 50px 50px 0px 0px;
+    float: right;
+}
+
+nav>ul{
+    list-style: none;
+}
+
+nav>ul>li{
+   display: inline;
+   margin: 0px 10px; 
+}
+
+section{
+    width: 68%;
+    height: 300px;
+    background-color: #00008B;
+    margin: 0px 1%;
+    float: left;
+}
+
+.servico{
+    width: 23%;
+    height: 260px;
+    background-color: #1E90FF;
+    float: left;
+    margin: 10px 1%;
+}
+
+aside{
+    width: 28%;
+    height: 1000px;
+    background-color: #00008B;
+    margin: 0px 1%;
+    float: right;
+}
+
+aside>div{
+    width: 94%;
+    background-color: #1E90FF;
+    margin: 10px auto;
+}
+
+#rastreio{
+    height: 200px;
+}
+
+#frete{
+    height: 340px;
+}
+
+#cobertura{
+    height: 400px;
+}
+
+article{
+    width: 68%;
+    height: 700px;
+    background-color: #00008B;
+    margin: 0px 1%;
+    float: left;
+}
+
+.conteudo{
+    width: 98%;
+    height: 320px;
+    background-color: #1E90FF;
+    margin: 15px auto;
+}

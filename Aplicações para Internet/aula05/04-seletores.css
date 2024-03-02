@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* Seletor universal */
+*{
+    font-family: 'Lobster', cursive;
+}
+
+/* Estilização de um elemento (tag) */
+div{
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+}
+
+/* Seletor descendente somente a tap p que vai receber a configuração */
+div p{
+    color: blue;
+}
+
+/* Seletor descendente somente a tag span que vai receber a configuração */
+div span{
+    background-color: chartreuse;
+    width: 300px;
+    height: 300px;
+    display: block;
+}
+
+/* Seletor filho */
+div > span{
+    width: 500px;
+    height: 500px;
+    display: block;
+    background-color: slateblue;
+}
+
+/* Estilização de vários elementos */
+h1, h2, h3{
+    text-align: right;
+    color: brown;
+    font-size: 50px;
+}
+
+.umaClassQualquer{
+    background-color: darkgoldenrod;
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+    display: block;
+}
+
+#umIdQualquer{
+    background-color: rgb(0, 255, 255);
+    width: 300px;
+    height: 300px;
+    display: block;
+    border-top: 5px solid red;
+    border-bottom: 10px solid green;
+    border-left: 30px dashed pink;
+    border-right: 50px double yellow;
+}

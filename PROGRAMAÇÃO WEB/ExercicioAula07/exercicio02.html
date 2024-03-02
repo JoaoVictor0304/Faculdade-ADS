@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02 - Aula 07</title>
+</head>
+<body>
+    <label for="">Digite um número inteiro:</label>
+    <br>
+    <input type="text" id="numero">
+    <br><br>
+    <button type="button" id="btn">Enviar</button>
+    <br><br>
+    O número é: <input type="text" id="resultado">
+
+
+    <script>
+        btn.addEventListener("click", 
+            function(){
+                let num, res;
+                num = Number(document.getElementById("numero").value);
+                if(num % 2 == 0){
+                    document.getElementById("resultado").value = "Par";
+                }else{
+                    document.getElementById("resultado").value = "Ímpar";
+                }
+            }
+        )
+    </script>
+</body>
+</html>

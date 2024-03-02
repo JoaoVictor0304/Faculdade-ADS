@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 03 - Aula 05</title>
+    <script>
+        // Crie um script que calcule as raízes de uma equação de 2º grau ax2 + bx + c. Supor que as raízes sãoreais. Para calcular a raiz você pode utilizar a função Math.sqrt (valor) – função própria do JavaScript.Essa função retorna o resultado da raiz quadrada que deverá ser guardado em alguma variável. Neste exemplo vamos supor que sempre teremos um delta válido.
+        "use strict";
+        let a, b, c, x, raiz;
+        // entrada de dados
+        a = Number(prompt("Qual o valor de a"));
+        b = Number(prompt("Qual o valor de b"));
+        c = Number(prompt("Qual o valor de c"));
+        x = Number(prompt("Qual o valor de x"));
+        // processamento
+        raiz = Math.sqrt(a*(x*x)+b*x+c);
+        // saída
+        document.write("<h3> Raiz: " + raiz + "</h3>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

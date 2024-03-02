@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01 - Aula 07</title>
+</head>
+<body>
+    <label for="valor">Digite o valor total da compra:</label>
+    <br>
+    <input type="text" name="" id="total">
+    <br><br>
+    <label for="numParcelas">Digite a quantidade de parcelas:</label>
+    <br>
+    <input type="text" name="" id="parc">
+    <br><br>
+    <button type="button" id="btn">Enviar</button>
+    <br><br>
+    <div id="resultado"></div>
+
+    <script>
+        btn.addEventListener("click",
+            function(){
+                let compra, parcela, juros;
+                compra = Number(document.getElementById("total").value);
+                parcela = Number(document.getElementById("parc").value);
+
+                switch(parcela){
+                    case 1:
+                        document.getElementById("resultado").innerHTML = "A parcela fica: R$" + compra;
+                        break;
+                    case 2:
+                        juros = (compra + (compra*0.03))/2
+                        document.getElementById("resultado").innerHTML = "A parcela fica: R$" + juros;
+                        break;
+                    case 4:
+                        juros = (compra + (compra*0.07))/4
+                        document.getElementById("resultado").innerHTML = "A parcela fica: R$" + juros;
+                        break;
+                    default:
+                        document.getElementById("resultado").innerHTML = "Número de parcelas inválido. Por favor, escolha 1, 2 ou 4.";
+                }
+                
+            }
+        );
+    </script>
+</body>
+</html>

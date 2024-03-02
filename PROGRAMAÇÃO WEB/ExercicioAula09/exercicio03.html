@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - Aula 09</title>
+    <link rel="stylesheet" href="./CSS/exercicio03.css">
+</head>
+
+<body>
+    <form action="">
+        <h1>Cadastro de aluno</h1>
+        <label for="">Nome:</label>
+        <br>
+        <input type="text" name="" id="nome">
+        <br><br>
+        <label for="">RGM:</label>
+        <br>
+        <input type="text" name="" id="rgm">
+        <br><br>
+        <label for="">Nota parcial: (máximo 2 pontos)</label>
+        <br>
+        <input type="text" name="" id="ntParcial">
+        <br><br>
+        <label for="">Nota exercícios: (máximo 1 ponto)</label>
+        <br>
+        <input type="text" name="" id="ntExercicios">
+        <br><br>
+        <label for="">Nota projeto: (máximo 2 pontos)</label>
+        <br>
+        <input type="text" name="" id="ntProjeto">
+        <br><br>
+        <label for="">Nota regimental: (máximo 5 pontos)</label>
+        <br>
+        <input type="text" name="" id="ntRegimental">
+        <br><br>
+        <button type="button" id="btnCadastrar">Cadastrar</button>
+        <button type="button" id="btnExibirDados">Exibir dados</button>
+        <br><br>
+        <div id="tabela"></div>
+
+        <script>
+            btnCadastrar.addEventListener("click",
+                function () {
+                    cadastrar();
+                }
+            );
+
+            btnExibirDados.addEventListener("click",
+                function () {
+                    exibirDados();
+                }
+            );
+
+            let nomes = [];
+            let rgms = [];
+            let notas_p = [];
+            let notas_exer = [];
+            let notas_proj = [];
+            let notas_reg = [];
+
+            function cadastrar() {
+                const nome = document.querySelector("#nome").value;
+                const rgm = document.querySelector("#rgm").value;
+                const nota_p = parseFloat(document.querySelector("#ntParcial").value);
+                const nota_exer = parseFloat(document.querySelector("#ntExercicios").value);
+                const nota_proj = parseFloat(document.querySelector("#ntProjeto").value);
+                const nota_reg = parseFloat(document.querySelector("#ntRegimental").value);
+
+                if (nome != "" && rgm != "" && !isNaN(nota_p) && !isNaN(nota_exer) && !isNaN(nota_proj) && !isNaN(nota_reg)) {
+                    nomes.push(nome);
+                    rgms.push(rgm);
+                    notas_p.push(nota_p);
+                    notas_exer.push(nota_exer);
+                    notas_proj.push(nota_proj);
+                    notas_reg.push(nota_reg);
+
+                    document.querySelector("#nome").value = '';
+                    document.querySelector("#rgm").value = '';
+                    document.querySelector("#ntParcial").value = '';
+                    document.querySelector("#ntExercicios").value = '';
+                    document.querySelector("#ntProjeto").value = '';
+                    document.querySelector("#ntRegimental").value = '';
+
+                } else {
+                    alert("Há campos em branco!");
+                }
+            }
+
+            function calcularNotaFinal(parcial, exercicios, projetos, regimental) {
+                return parcial + exercicios + projetos + regimental;
+            }
+
+            function obterConceito(notaFinal) {
+                if (notaFinal >= 7) {
+                    return "Aprovado";
+                } else if (notaFinal >= 4) {
+                    return "Avaliação Final";
+                } else {
+                    return "Reprovado";
+                }
+            }
+
+            function exibirDados() {
+                let tabelaHTML = '<table>';
+                tabelaHTML += '<tr><th>Nome</th><th>RGM</th><th>Nota Parcial</th><th>Nota Exercícios</th><th>Nota Projeto</th><th>Nota Regimental</th><th>Nota Final</th><th>Conceito</th></tr>';
+
+                for (let i = 0; i < nomes.length; i++) {
+                    const notaFinal = calcularNotaFinal(notas_p[i], notas_exer[i], notas_proj[i], notas_reg[i]);
+                    const conceito = obterConceito(notaFinal);
+
+                    let conceitoClasse = '';
+                    if (conceito === "Aprovado"){
+                        conceitoClasse = "aprovado";
+                    }else if(conceito === "Avaliação Final"){
+                        conceitoClasse = "avaliacao-final";
+                    }else{
+                        conceitoClasse = "reprovado";
+                    }
+
+                    tabelaHTML += `<tr><td>${nomes[i]}</td><td>${rgms[i]}</td><td>${notas_p[i]}</td><td>${notas_exer[i]}</td><td>${notas_proj[i]}</td><td>${notas_reg[i]}</td><td>${notaFinal.toFixed(2)}</td><td class="${conceitoClasse}">${conceito}</td></tr>`;
+                }
+
+                tabelaHTML += '</table>';
+                document.querySelector("#tabela").innerHTML = tabelaHTML;
+            }
+        </script>
+
+    </form>
+</body>
+
+</html>

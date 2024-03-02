@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01 - Aula 09</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Digite uma palavra ou frase:</label>
+        <br><br>
+        <input type="text" name="" id="texto">
+        <br>
+        <button type="button" id="btnMaiuscula">Maiúscula</button>
+        <button type="button" id="btnSeparar">Separar</button>
+    </form>
+    <br>
+    <div id="res"></div>
+    <div id="resSep"></div>
+
+    <script>
+        'use strict';
+
+        btnMaiuscula.addEventListener("click", 
+            function(){
+                let txt = document.querySelector("#texto").value;
+                let resp = txt.toUpperCase();
+                document.querySelector("#res").innerHTML = resp;
+            }
+        );
+
+        btnSeparar.addEventListener("click", 
+            function(){
+                const texto = document.querySelector("#texto").value;
+                const palavras = texto.split(" ");
+                const palavrasSeparadas = palavras.join("<br>");
+                document.querySelector("#resSep").innerHTML = palavrasSeparadas;
+            }
+        );
+
+    </script>
+
+</body>
+</html>

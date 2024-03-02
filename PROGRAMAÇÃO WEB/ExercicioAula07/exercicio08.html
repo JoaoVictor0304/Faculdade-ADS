@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08 - Aula 07</title>
+</head>
+<body>
+    <form action="">
+        <h1>Calculo do Imposto de Renda</h1>
+        <label for="">Registro:</label>
+        <input type="text" id="reg">
+        <br>
+        <label for="">Nome:</label>
+        <input type="text" name="" id="nome">
+        <br>
+        <label for="">Salário:</label>
+        <input type="number" name="" id="sal">
+        <br><br>
+        <button type="button" id="btn">Calcular IR</button>
+        <br><br>
+        <label for="">Imposto de Renda:</label>
+        <input type="text" name="" id="res">
+    </form>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", 
+            function(){
+                let info = parseFloat(document.getElementById("sal").value);
+                ir(info);
+            }
+        )
+
+        function ir(sal){
+            let imp;
+            if(sal <= 1434){
+                imp = 0;
+            }
+            else if(sal <= 2150){
+                imp = sal*0.075;
+            }
+            else if(sal <= 2866){
+                imp = sal*0.15;
+            }
+            else if(sal <= 3582){
+                imp = sal*0.225;
+            }
+            else{
+                imp = sal*0.275;
+            }
+            document.getElementById("res").value = imp.toFixed(2);
+        }
+    </script>
+</body>
+</html>

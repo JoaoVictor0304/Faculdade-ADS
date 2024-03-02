@@ -1,0 +1,42 @@
+td{
+    text-align: center;
+    padding: 7px;
+}
+
+th{
+    text-align: center;
+    padding: 7px;
+}
+
+tr{
+    text-align: center;
+}
+
+table{
+    background-color: #D3D3D3;
+}
+
+#a{
+    background-color: #A9A9A9;
+    border-top: solid #808080;
+}
+
+#b{
+    background-color: #90EE90;
+    border-top: solid #2E8B57;
+}
+
+#c{
+    background-color: #ADD8E6;
+    border-top: solid #00008B;
+}
+
+#d{
+    background-color: #BA55D3;
+    border-top: solid 	#4B0082;
+}
+
+#e{
+    background-color: #ffbd2c;
+    border-top: solid #d58300;
+}

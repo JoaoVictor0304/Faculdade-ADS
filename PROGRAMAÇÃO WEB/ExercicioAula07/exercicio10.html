@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10 - Aula 07</title>
+</head>
+<body>
+    <label for="">Digite um número:</label>
+    <input type="text" name="" id="n1">
+    <br><br>
+    <button type="button" id="btn">Enviar</button>
+    <br><br>
+    Resultado:<input type="text" name="" id="res">
+
+    <script>
+
+        btn.addEventListener("click", 
+            function(){
+                let n1, result;
+                n1 = parseInt(document.getElementById("n1").value);
+                result = 1;
+
+                if (n1 < 0){
+                    alert("O fatorial de um número negativo não é definido.")
+                    return;
+                }
+                
+                for(let i = 1; i <= n1; i++){
+                    result *= i;
+                }
+                document.getElementById("res").value = result;
+            }
+        );
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 03 - do...while</title>
+    <script>
+        "use strict";
+        let op; // variável de controle
+        do{
+            let n1, n2;
+            n1 = Number(prompt("Digite o primeiro número"));
+            n2 = Number(prompt("Digite o segundo número"));
+            op = Number(prompt("Digite:\n1 - Somar \n2 - Subtrair \n3 - Multiplicar \n4 - Sair")); // atualização da variável de controle
+            switch(op){
+                case 1:
+                    console.log(`Soma: ${n1+n2}`)
+                    break;
+                case 2:
+                    console.log(`Subtração: ${n1-n2}`)
+                    break;
+                case 3:
+                    console.log(`Multiplicação: ${n1*n2}`)
+                    break;
+            }
+        }while(op != 4);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

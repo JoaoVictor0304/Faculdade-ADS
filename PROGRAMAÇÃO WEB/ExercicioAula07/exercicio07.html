@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07 - Aula 07</title>
+    <link rel="stylesheet" href="./CSS/styleEx07.css">
+</head>
+<body>
+    <form action="">
+        <label for="">Qual é a sua altura:</label>
+        <br>
+        <input type="text" name="" id="alt">m
+        <br><br>
+        <label for="">Qual é o seu peso?</label>
+        <br>
+        <input type="text" name="" id="peso">kg
+        <br><br>
+        <label for="">Qual é o seu sexo: (M/F)</label>
+        <br>
+        <input type="text" name="" id="sexo">
+        <br><br>
+        <button type="button" id="btn">Enviar</button>
+        <br><br>
+        <div id="res"></div>
+        
+    </form>
+
+    <script>
+        btn.addEventListener("click", 
+            function(){
+                let alt, peso, sexo, imc;
+                alt = Number(document.getElementById("alt").value);
+                peso = Number(document.getElementById("peso").value);
+                sexo = document.getElementById("sexo").value.toLowerCase();
+
+                imc = peso / (alt*alt);
+
+                if(sexo == 'm'){
+                    if(imc < 20.7){
+                        document.getElementById("res").innerHTML = "Abaixo do peso";
+                    }
+                    else if(imc <= 26.4){
+                        document.getElementById("res").innerHTML = "No peso normal";
+                    }
+                    else if(imc <= 27.8){
+                        document.getElementById("res").innerHTML = "Marginalmente acima do peso";
+                    }
+                    else if(imc <= 31.1){
+                        document.getElementById("res").innerHTML = "Acima do peso ideal";
+                    }
+                    else if(imc > 31.1){
+                        document.getElementById("res").innerHTML = "Obeso";
+                    }
+                }else if(sexo == 'f'){
+                    if(imc < 19.1){
+                        document.getElementById("res").innerHTML = "Abaixo do peso";
+                    }
+                    else if(imc <= 25.8){
+                        document.getElementById("res").innerHTML = "No peso normal";
+                    }
+                    else if(imc <= 27.3){
+                        document.getElementById("res").innerHTML = "Marginalmente acima do peso";
+                    }
+                    else if(imc <= 32.3){
+                        document.getElementById("res").innerHTML = "Acima do peso ideal";
+                    }
+                    else if(imc > 32.3){
+                        document.getElementById("res").innerHTML = "Obeso";
+                    }
+                }else{
+                    document.getElementById("res").innerHTML = "Digite um sexo válido: (m/f)";
+                }
+            }
+        );       
+    </script>
+</body>
+</html>

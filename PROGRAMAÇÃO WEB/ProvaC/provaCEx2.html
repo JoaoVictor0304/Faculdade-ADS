@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova C - Exercício 02</title>
+</head>
+<body>
+    <form action="">
+        <button type="button" id="btnSorte">Sortear números</button>
+        <br><br>
+        <label for="">Separados por -</label>
+        <br>
+        <div id="res"></div>
+        <br><br>
+        <label for="">Números maiores que 100</label>
+        <br>
+        <div id="maior"></div>
+        <br><br>
+        <label for="">Soma dos números Ímpares</label>
+        <div id="imp"></div>
+
+    </form>
+
+    <script>
+        btnSorte.addEventListener("click", 
+            function(){
+                sortear();
+                separados();
+                maiores();
+                impar();
+                
+            }
+        );
+
+        let num = [];
+
+        function sortear(){
+            for(i = 0; i < 20; i++){
+                num.push(Math.round(Math.random()*500));
+            }
+            console.log(num);
+        }
+
+        function separados(){
+            for(i = 0; i < num.length; i++){
+                document.querySelector("#res").innerHTML += num[i] + " - ";
+            }
+            
+        }
+
+        function maiores(){
+            for(i = 0; i < num.length; i++){
+                if(num[i] > 100){
+                    document.querySelector("#maior").innerHTML += num[i] + " ";
+                } 
+            }
+        }
+
+        function impar(){
+            let soma = 0;
+            for(i = 0; i < num.length; i++){
+                if(num[i] % 2 != 0){
+                    soma += num[i];
+                }
+            }
+            document.querySelector("#imp").innerHTML = soma;
+        }
+
+    </script>
+</body>
+</html>

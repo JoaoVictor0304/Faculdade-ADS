@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02 - Aula 09</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="text" id="expressao">
+    <button type="button" id="btnCalcular"> = </button>
+    <br><br>
+    <button type="button" id="btnPotencia">Potência</button>
+    <button type="button" id="btnArredondar">Arredondar</button>
+    <button type="button" id="btnRaizQuadrada">Raiz Quadrada</button>
+    <br><br>
+    <div id="res"></div>
+
+
+    <script>
+        'use strict';
+
+        btnCalcular.addEventListener("click", 
+            function(){
+                calcular();
+            }
+        );
+
+        btnPotencia.addEventListener("click", 
+            function(){
+                potencia();
+            }
+        );
+
+        btnArredondar.addEventListener("click", 
+            function(){
+                arredondar();
+            }
+        );
+
+        btnRaizQuadrada.addEventListener("click", 
+            function(){
+                raizQuadrada();
+            }
+        );
+
+        function calcular(){
+            let expressao = document.querySelector("#expressao").value;
+            let res = eval(expressao);
+            document.querySelector("#res").innerHTML = "Resultado: " + res;
+        }
+
+        function potencia(){
+            let base = parseFloat(prompt("Informe a base:"));
+            let expoente = parseFloat(prompt("Informe o expoente:"));
+            let res = Math.pow(base, expoente);
+            document.querySelector("#res").innerHTML = "Resultado da potência: " + res;
+        }
+
+        function arredondar(){
+            let num = parseFloat(prompt("Informe o número:"));
+            let res = Math.round(num);
+            document.querySelector("#res").innerHTML = "Resultado do arredondamento: " + res;
+        }
+
+        function raizQuadrada(){
+            let num = parseFloat(prompt("Informe o número:"));
+            let res = Math.sqrt(num);
+            document.querySelector("#res").innerHTML = "Resultado da raiz quadrada: " + res;
+        }
+
+    </script>
+</body>
+</html>

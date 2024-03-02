@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09 - Aula 07</title>
+</head>
+<body>
+    <form action="">
+        <h1>Calculadora</h1>
+        <label for="">Primeiro número:</label>
+        <br>
+        <input type="number" name="" id="n1">
+        <br>
+        <label for="">Segundo número:</label>
+        <br>
+        <input type="number" name="" id="n2">
+        <br>
+        <button type="button" onclick="verificaBtn('btnSoma')">+</button>
+        <button type="button" onclick="verificaBtn('btnSub')">-</button>
+        <button type="button" onclick="verificaBtn('btnMult')">*</button>
+        <button type="button" onclick="verificaBtn('btnDiv')">/</button>
+        <br><br>
+        Resultado:<input type="text" name="" id="res">
+    </form>
+
+    <script>
+
+        function verificaBtn(btn){
+            let n1, n2, result;
+            n1 = Number(document.getElementById("n1").value);
+            n2 = Number(document.getElementById("n2").value);
+            switch(btn){
+                case 'btnSoma':
+                    result = n1 + n2;
+                    break;
+                case 'btnSub':
+                    result = n1 - n2;
+                    break;
+                case 'btnMult':
+                    result = n1 * n2;
+                    break;
+                case 'btnDiv':
+                    result = n1 / n2;
+                    break;
+            }
+            document.getElementById("res").value = result;
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* estilo css externo */
+
+/* formatação para um elemento html */
+p{
+    font-family: "Verdana";
+    font-size: 14pt;
+    color: blue;
+}
+
+/* formatação para qualquer elemento - classe genérica */
+/* .nomeclasse{} */
+.fonte{
+    color: red;
+    font-family: "Tahoma";
+}
+
+/* estilo individual - aplicado uma única */
+/* #nomeestilo{} */
+
+#principal{
+    margin: auto; /* centraliza */
+    width: 900px;
+    border: 1px solid;
+}
+
+img{
+    width: 80%;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+
+/* hierarquia direta */
+footer p{
+    color: aqua;
+}
+
+/* hierarquia indireta */
+nav>ul>li{
+    list-style-type: none; /*retira marcador*/
+    display: inline-block; /*elemento em linha*/
+    padding: 20px; /* espaçamento interno */
+    margin: 10px; /* espaçamento externo */
+}
+
+/* pseudo-classe - classes com formatação
+link - pseudo-classe com formatação do link */
+a:link{
+    font-family: "Tahoma";
+    font-size: 14pt;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+/* visited - pseudo-classe com a formatação de link já viasitado */
+a:visited{
+    color: black;
+}
+

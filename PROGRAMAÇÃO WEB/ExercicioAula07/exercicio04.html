@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04 - Aula 07</title>
+</head>
+<body>
+    <label for="">Digite a base do triângulo:</label>
+    <br>
+    <input type="text" id="base">
+    <br><br>
+    <label for="">Digite a altura do triângulo:</label>
+    <br>
+    <input type="text" id="alt">
+    <br><br>
+    <button type="button" id="btn">Enviar</button>
+    <br><br>
+    A área do triângulo é: <input type="text" id="result">m²
+
+    <script>
+        btn.addEventListener("click", 
+            function(){
+                let base, altura, area;
+                base = Number(document.getElementById("base").value);
+                altura = Number(document.getElementById("alt").value);
+                area = (base * altura)/2
+                document.getElementById("result").value = area
+            }
+        );
+    </script>
+</body>
+</html>
