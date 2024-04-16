@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questões de HTML, CSS e JavaScript</title>
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Questões de HTML, CSS e JavaScript</h1>
+
+    <div class="question" id="question1">
+        <h2>Questão 1</h2>
+        <p>O que significa HTML?</p>
+        <input type="radio" name="q1" value="a"> a) Hyper Text Markup Language<br>
+        <input type="radio" name="q1" value="b"> b) Hyperlinks and Text Markup Language<br>
+        <input type="radio" name="q1" value="c"> c) Home Tool Markup Language<br>
+        <input type="radio" name="q1" value="d"> d) Hyper Tool Markup Language<br>
+        <input type="radio" name="q1" value="e"> e) Hyperlinks Text Management Language<br>
+    </div>
+
+    <div class="question" id="question2">
+        <h2>Questão 2</h2>
+        <p>Qual é a função do CSS em um site?</p>
+        <input type="radio" name="q2" value="a"> a) Definir o comportamento interativo do site.<br>
+        <input type="radio" name="q2" value="b"> b) Fornecer uma linguagem de programação para criar páginas web.<br>
+        <input type="radio" name="q2" value="c"> c) Controlar o estilo e a aparência dos elementos HTML em uma página web.<br>
+        <input type="radio" name="q2" value="d"> d) Armazenar dados do usuário no navegador.<br>
+        <input type="radio" name="q2" value="e"> e) Gerenciar o lado do servidor do site.<br>
+    </div>
+
+    <div class="question" id="question3">
+        <h2>Questão 3</h2>
+        <p>Qual é a linguagem de programação usada para adicionar interatividade a páginas web?</p>
+        <input type="radio" name="q3" value="a"> a) HTML<br>
+        <input type="radio" name="q3" value="b"> b) CSS<br>
+        <input type="radio" name="q3" value="c"> c) JavaScript<br>
+        <input type="radio" name="q3" value="d"> d) Python<br>
+        <input type="radio" name="q3" value="e"> e) SQL<br>
+    </div>
+
+    <button onclick="verificarRespostas()">Verificar Respostas</button>
+
+    <script>
+        function verificarRespostas() {
+            var respostasCorretas = ["a", "c", "c"];
+            var respostasUsuario = [];
+
+            // Obter respostas selecionadas pelo usuário
+            var radios = document.querySelectorAll('input[type="radio"]:checked');
+            radios.forEach(function(radio) {
+                respostasUsuario.push(radio.value);
+            });
+
+            // Verificar respostas
+            var acertos = 0;
+            for (var i = 0; i < respostasCorretas.length; i++) {
+                if (respostasUsuario[i] === respostasCorretas[i]) {
+                    acertos++;
+                }
+            }
+
+            // Exibir resultado
+            var totalQuestoes = respostasCorretas.length;
+            var resultado = "Você acertou " + acertos + " de " + totalQuestoes + " questões.";
+            alert(resultado);
+        }
+    </script>
+</body>
+</html>
