@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questões de Banco de Dados</title>
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Questões de Banco de Dados</h1>
+
+    <div class="question" id="question1">
+        <h2>Questão 1</h2>
+        <p>Qual é a diferença entre chave primária e chave estrangeira em um banco de dados relacional?</p>
+        <input type="radio" name="q1" value="a"> a) A chave primária identifica exclusivamente uma linha em uma tabela, enquanto a chave estrangeira estabelece uma relação entre duas tabelas.<br>
+        <input type="radio" name="q1" value="b"> b) A chave primária estabelece uma relação entre duas tabelas, enquanto a chave estrangeira identifica exclusivamente uma linha em uma tabela.<br>
+        <input type="radio" name="q1" value="c"> c) Não há diferença entre chave primária e chave estrangeira.<br>
+        <input type="radio" name="q1" value="d"> d) A chave primária é utilizada para realizar operações de junção entre tabelas, enquanto a chave estrangeira é utilizada para ordenar os dados.<br>
+        <input type="radio" name="q1" value="e"> e) A chave primária é um tipo de índice, enquanto a chave estrangeira é um tipo de restrição de integridade.<br>
+    </div>
+
+    <div class="question" id="question2">
+        <h2>Questão 2</h2>
+        <p>Qual é a diferença entre SQL e NoSQL? Dê exemplos de cada um.</p>
+        <input type="radio" name="q2" value="a"> a) SQL é uma linguagem de consulta estruturada usada principalmente em bancos de dados relacionais, enquanto NoSQL é uma linguagem de programação utilizada para criar aplicativos web.<br>
+        <input type="radio" name="q2" value="b"> b) SQL é uma linguagem de programação usada para manipular dados em bancos de dados relacionais, enquanto NoSQL é um tipo de banco de dados que não segue um modelo relacional.<br>
+        <input type="radio" name="q2" value="c"> c) SQL e NoSQL são termos intercambiáveis e referem-se ao mesmo tipo de banco de dados.<br>
+        <input type="radio" name="q2" value="d"> d) SQL é uma tecnologia de banco de dados usada em aplicativos de desktop, enquanto NoSQL é usada em aplicativos móveis.<br>
+        <input type="radio" name="q2" value="e"> e) SQL é um banco de dados relacional, enquanto NoSQL é um banco de dados baseado em gráficos.<br>
+    </div>
+
+    <div class="question" id="question3">
+        <h2>Questão 3</h2>
+        <p>O que é normalização em banco de dados e por que é importante?</p>
+        <input type="radio" name="q3" value="a"> a) Normalização é o processo de aumentar a redundância nos dados, a fim de melhorar o desempenho do banco de dados.<br>
+        <input type="radio" name="q3" value="b"> b) Normalização é o processo de otimização do banco de dados para melhorar a velocidade das consultas.<br>
+        <input type="radio" name="q3" value="c"> c) Normalização é o processo de organizar os dados em uma estrutura lógica para evitar redundâncias e inconsistências, garantindo a integridade dos dados.<br>
+        <input type="radio" name="q3" value="d"> d) Normalização é o processo de adicionar mais dados ao banco de dados para torná-lo mais completo.<br>
+        <input type="radio" name="q3" value="e"> e) Normalização é o processo de diminuir a complexidade do banco de dados, removendo tabelas desnecessárias.<br>
+    </div>
+
+    <button onclick="verificarRespostas()">Verificar Respostas</button>
+
+    <script>
+        function verificarRespostas() {
+            var respostasCorretas = ["a", "b", "c"];
+            var respostasUsuario = [];
+
+            // Obter respostas selecionadas pelo usuário
+            var radios = document.querySelectorAll('input[type="radio"]:checked');
+            radios.forEach(function(radio) {
+                respostasUsuario.push(radio.value);
+            });
+
+            // Verificar respostas
+            var acertos = 0;
+            for (var i = 0; i < respostasCorretas.length; i++) {
+                if (respostasUsuario[i] === respostasCorretas[i]) {
+                    acertos++;
+                }
+            }
+
+            // Exibir resultado
+            var totalQuestoes = respostasCorretas.length;
+            var resultado = "Você acertou " + acertos + " de " + totalQuestoes + " questões.";
+            alert(resultado);
+        }
+    </script>
+</body>
+</html>
