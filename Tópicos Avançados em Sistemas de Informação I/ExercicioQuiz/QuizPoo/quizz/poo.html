@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questões de Programação Orientada a Objetos</title>
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Questões de Programação Orientada a Objetos</h1>
+
+    <div class="question" id="question1">
+        <h2>Questão 1</h2>
+        <p>O que é encapsulamento em programação orientada a objetos?</p>
+        <input type="radio" name="q1" value="a"> a) É o processo de esconder a implementação interna de um objeto e expor apenas os métodos de manipulação dos dados.<br>
+        <input type="radio" name="q1" value="b"> b) É a capacidade de um objeto de herdar propriedades e comportamentos de outro objeto.<br>
+        <input type="radio" name="q1" value="c"> c) É a capacidade de um objeto de ser instanciado a partir de uma classe.<br>
+        <input type="radio" name="q1" value="d"> d) É a capacidade de um objeto de pertencer a uma classe específica.<br>
+        <input type="radio" name="q1" value="e"> e) É o processo de agrupar dados e comportamentos em uma única unidade.<br>
+    </div>
+
+    <div class="question" id="question2">
+        <h2>Questão 2</h2>
+        <p>O que é herança em programação orientada a objetos?</p>
+        <input type="radio" name="q2" value="a"> a) É o processo de permitir que um objeto tenha múltiplos estados.<br>
+        <input type="radio" name="q2" value="b"> b) É a capacidade de um objeto de herdar propriedades e comportamentos de outro objeto.<br>
+        <input type="radio" name="q2" value="c"> c) É a capacidade de um objeto de ser instanciado a partir de uma classe.<br>
+        <input type="radio" name="q2" value="d"> d) É a capacidade de um objeto de pertencer a uma classe específica.<br>
+        <input type="radio" name="q2" value="e"> e) É o processo de agrupar dados e comportamentos em uma única unidade.<br>
+    </div>
+
+    <div class="question" id="question3">
+        <h2>Questão 3</h2>
+        <p>O que é polimorfismo em programação orientada a objetos?</p>
+        <input type="radio" name="q3" value="a"> a) É o processo de permitir que um objeto tenha múltiplos estados.<br>
+        <input type="radio" name="q3" value="b"> b) É o processo de esconder a implementação interna de um objeto e expor apenas os métodos de manipulação dos dados.<br>
+        <input type="radio" name="q3" value="c"> c) É a capacidade de um objeto de herdar propriedades e comportamentos de outro objeto.<br>
+        <input type="radio" name="q3" value="d"> d) É a capacidade de um objeto de pertencer a uma classe específica.<br>
+        <input type="radio" name="q3" value="e"> e) É a capacidade de um objeto de se comportar de maneiras diferentes com base no contexto.<br>
+    </div>
+
+    <button onclick="verificarRespostas()">Verificar Respostas</button>
+
+    <script>
+        function verificarRespostas() {
+            var respostasCorretas = ["a", "b", "e"];
+            var respostasUsuario = [];
+
+            // Obter respostas selecionadas pelo usuário
+            var radios = document.querySelectorAll('input[type="radio"]:checked');
+            radios.forEach(function(radio) {
+                respostasUsuario.push(radio.value);
+            });
+
+            // Verificar respostas
+            var acertos = 0;
+            for (var i = 0; i < respostasCorretas.length; i++) {
+                if (respostasUsuario[i] === respostasCorretas[i]) {
+                    acertos++;
+                }
+            }
+
+            // Exibir resultado
+            var totalQuestoes = respostasCorretas.length;
+            var resultado = "Você acertou " + acertos + " de " + totalQuestoes + " questões.";
+            alert(resultado);
+        }
+    </script>
+</body>
+</html>
